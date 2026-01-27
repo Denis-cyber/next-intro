@@ -13,6 +13,9 @@ export default function Home() {
           height={20}
           priority
         />
+
+        <h1>Hello, NEXT JS</h1>
+
         <div className={styles.intro}>
           <h1>To get started, edit the page.js file.</h1>
           <p>
