@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server';
-// import { getHelloMessage, createHelloGreeting } from '@/lib/hello';
+import { getHelloMessage, createHelloGreeting } from '@/lib/hello';
 
 export async function GET() {
-	// const data = getHelloMessage();
-	return NextResponse.json({ message: 'Hello, from API route!' });
+	const data = getHelloMessage()
+	return NextResponse.json(data);
 }
 
 export async function POST(req) {
 	const { name } = await req.json();
-	
-	return NextResponse.json({ message: `Hello ${name}, from shared module!` });
+	const greeting = createHelloGreeting(name);
+	return NextResponse.json(greeting);
 }

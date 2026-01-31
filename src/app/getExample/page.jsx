@@ -1,23 +1,16 @@
-import ButtonGetRequest from "@components/ButtonGetRequest";
+import ButtonGetRequest from "@/components/ButtonGetRequest";
+import { getHelloMessage } from '@/lib/hello';
 
-async function getMessageFromApi(params) {
-	const res = await fetch(`${process.env.NEXT_URL}/api/hello`);
-	
-    return res.json();
+const GetExample = () => {
+	const { message } = getHelloMessage();
+
+	return (
+		<section className="content">
+			<h2 className="section-title">Get request</h2>
+			{message && <p>{message}</p>}
+			<ButtonGetRequest />
+		</section>
+	);
 }
 
-const GetExamplePage = async () => {
-
-    const { message }= await getMessageFromApi();
-
-    return (
-        <section className="content">
-            <h2 className="section-title">Get request</h2>
-
-            {message && <p>{message}</p>}
-            <ButtonGetRequest />
-        </section>
-    );
-};
-
-export default GetExamplePage;
+export default GetExample;

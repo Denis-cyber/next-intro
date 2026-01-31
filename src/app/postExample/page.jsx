@@ -1,18 +1,7 @@
-async function makePostRequest(name) {
-	const res = await fetch(`${process.env.NEXT_URL}/api/hello`, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-
-		},
-		body: JSON.stringify({ name }),
-	});
-	
-    return res.json();
-}
+import { createHelloGreeting } from '@/lib/hello';
 
 const PostExample = async () => {
-	const { message } = await makePostRequest('Pavel');
+	const { message } = createHelloGreeting('Yurij');
 	return (
 		<section className="content">
 			<h2 className="section-title">Post request</h2>
