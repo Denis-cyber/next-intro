@@ -6,8 +6,8 @@ export async function GET() {
 	return NextResponse.json({ message: 'Hello, from API route!' });
 }
 
-// export async function POST(req) {
-// 	const { name } = await req.json();
-// 	const greeting = createHelloGreeting(name);
-// 	return NextResponse.json(greeting);
-// }
+export async function POST(req) {
+	const { name } = await req.json();
+	
+	return NextResponse.json({ message: `Hello ${name}, from shared module!` });
+}
