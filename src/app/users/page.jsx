@@ -1,9 +1,13 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 async function getUsers() {
     const res = await fetch('https://jsonplaceholder.typicode.com/users', {
         cache: 'no-store',
     });
+
+    if (res.status === 404) notFound();
+
     if (!res.ok) throw new Error('Failed to fetch users');
     return res.json();
 }
