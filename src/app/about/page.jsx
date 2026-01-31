@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 
 export const metadata = {
 	title: 'About page | Next JS tutorial',
@@ -15,22 +15,25 @@ const AboutPage = () => {
 				ведущими компаниями для разработки производительных и
 				масштабируемых приложений.
 			</p>
-			{/* <Image
-				src="/dodge-400-200.jpg"
-				alt="Dodge"
-				width="400"
-				height="200"
+
+			<Image
+				src="/boulevard.png"
+				alt="Kaschenko"
+				width="500"
+				height="300"
 				priority
 			/>
+
 			<br />
 			<br />
+
 			<Image
-				src="https://webcademy.ru/blog/wp-content/uploads/2023/07/Travel-X-Cover-870x400.jpg"
-				alt="Img"
-				width="435"
-				height="200"
+				src="https://media.istockphoto.com/id/157773958/photo/surfer-riding-a-wave-off-the-top.jpg?s=1024x1024&w=is&k=20&c=PH-2xaG2mT0Qw3kdtUYNRYrOkK2_uADDyaNXfLrLPnc="
+				alt="Kaschenko"
+				width="500"
+				height="300"
 				priority
-			/> */}
+			/>
 		</section>
 	);
 }
